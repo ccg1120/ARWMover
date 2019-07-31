@@ -1,18 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class FolderManagerUI : MonoBehaviour
+
+namespace Choe
 {
-    // Start is called before the first frame update
-    void Start()
+    public class FolderManagerUI : MonoBehaviour
     {
-        
-    }
+        public FolderManager Manager;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public Button Button_Exit;
+        public Button Button_Move;
+
+        public InputField FolderName_Input;
+        public InputField Extension_Input;
+
+
+
+
+
+        private void Awake()
+        {
+            SetButtonEvent();
+        }
+
+        private void SetButtonEvent()
+        {
+            Button_Exit.onClick.AddListener(()=> Manager.Exit_Action());
+            Button_Move.onClick.AddListener(()=> Manager.CreateAction());
+        }
+
     }
 }

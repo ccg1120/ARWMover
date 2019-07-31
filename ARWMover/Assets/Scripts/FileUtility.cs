@@ -12,6 +12,7 @@ namespace Choe
         private static string m_SourceFolderpath;
         private static string m_FileType;
 
+
         public static void FileMovesAlltoFolder()
         {
             System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
@@ -38,12 +39,6 @@ namespace Choe
              m_FileType = filetype;
         }
 
-        private static void PathClear()
-        {
-            m_DestFolderpath = string.Empty;
-            m_SourceFolderpath = string.Empty;
-            m_FileType = string.Empty;
-        }
         private static void FileMove(FileInfo info)
         {
             string filename = info.Name;

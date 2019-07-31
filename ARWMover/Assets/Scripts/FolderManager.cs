@@ -17,6 +17,27 @@ namespace Choe
         private string m_FileType;
 
 
+
+        public string DestFolderName
+        {
+            get { return DestFolderName; }
+            set { DestFolderName = value; }
+        }
+        public string DestFolderpath
+        {
+            get { return m_DestFolderPath; }
+            set { m_DestFolderPath = value; }
+        }
+        public string SourceFolderpath
+        {
+            get { return m_SourceFolderPath; }
+            set { m_SourceFolderPath = value; }
+        }
+        public string FileType
+        {
+            get { return m_FileType; }
+            set { m_FileType = value; }
+        }
         private void Start()
         {
             FolderManagerInit();
@@ -29,7 +50,16 @@ namespace Choe
             FileUtility.FileUtilityInit(m_SourceFolderPath, m_DestFolderPath, m_FileType);
 
         }
+        public void Exit_Action()
+        {
+            Debug.Log("Exit_Action");
+            Application.Quit();
+        }
 
+        public void OpenDirectory()
+        {
+            
+        }
         public void CreateAction()
         {
             if (FolderUtility.CreateFolder())
